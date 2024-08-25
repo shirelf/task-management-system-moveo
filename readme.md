@@ -41,13 +41,13 @@ PORT=3001
 
 ## API Endpoints
 
-# Authentication
+### Authentication
 
     POST /login: Authenticate a user with username and password.
     POST /respond-to-new-password-challenge: Respond to a new password challenge during authentication.
     GET /verify: Verify the JWT token.
 
-# Projects
+### Projects
 
     POST /projects: Create a new project (Authenticated).
     GET /projects: Get all projects (Authenticated).
@@ -56,7 +56,7 @@ PORT=3001
     DELETE /projects/
     : Delete a project by ID and its associated tasks (Authenticated).
 
-# Tasks
+### Tasks
 
     POST /projects/
     /tasks: Create a new task within a project (Authenticated).
@@ -69,20 +69,20 @@ PORT=3001
     /tasks/
     : Delete a task by ID (Authenticated).
 
-# Middleware
+## Middleware
 
     authenticate
     This middleware checks for a JWT in the Authorization header, verifies the token using AWS Cognito, and attaches the user information to the request object.
 
 ## Mongoose Models
 
-# Project
+### Project
 
 name: The name of the project (required).
 description: A description of the project (required).
 tasks: An array of task references associated with the project.
 
-# Task
+### Task
 
 title: The title of the task (required).
 description: A description of the task (required).
@@ -93,13 +93,13 @@ projectId: A reference to the project to which the task belongs (required).
 
 This project includes an integration test script written in Python to verify the functionality of the API with AWS Cognito authentication. The script tests the following:
 
-# Authentication:
+### Authentication:
 
 Logs in with the provided username and password.
 Handles password challenge if required.
 Verifies the obtained JWT token.
 
-# Project and Task Operations (Authenticated):
+### Project and Task Operations (Authenticated):
 
 Creates a new project.
 Creates a new task within the project.
@@ -107,7 +107,7 @@ Retrieves all tasks in the project.
 Updates a task's status.
 Deletes a task.
 
-# Unauthorized Access (Unauthenticated):
+### Unauthorized Access (Unauthenticated):
 
 Attempts to create a project without authentication.
 Attempts to create, retrieve, update, and delete tasks without authentication.
@@ -172,7 +172,7 @@ The --base-url option allows you to specify the API's base URL (default is http:
 - This request will return the IdToken.
 - Add a header 'authorization' with the IdToken to create, get, update and delete projects and tasks. 
 
-# Suggested Deployment Strategy for Handling 10k Users a Day:
+## Suggested Deployment Strategy for Handling 10k Users a Day:
 
 Deploy the app using AWS Lambda for serverless execution.
 Use AWS API Gateway to route HTTP requests to Lambda functions, that will manage scale automatically.
