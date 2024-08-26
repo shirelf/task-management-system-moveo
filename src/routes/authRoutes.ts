@@ -26,7 +26,7 @@ router.post('/login', async (req: Request, res: Response) => {
     }
 });
 
-// Respond to new password challenge route
+// Respond to new password challenge route, use session from login
 router.post('/respond-to-new-password-challenge', async (req: Request, res: Response) => {
     const { username, newPassword, session } = req.body;
 

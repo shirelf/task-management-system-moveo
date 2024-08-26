@@ -1,10 +1,3 @@
-# /// script
-# requires-python = ">=3.12"
-# dependencies = [
-#     "requests",
-#     "pyjwt",
-# ]
-# ///
 import argparse
 from pprint import pprint
 import requests

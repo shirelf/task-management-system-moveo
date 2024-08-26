@@ -58,14 +58,14 @@ PORT=3001
 
 ### Tasks
 
-    POST /projects/
+    POST /projects/:projectId/tasks
     /tasks: Create a new task within a project (Authenticated).
-    GET /projects/
+    GET /projects/:projectId/tasks
     /tasks: Get all tasks within a project (Authenticated).
-    PUT /projects/
+    PUT /projects/:projectId/tasks/:taskId
     /tasks/
     : Update a task by ID (Authenticated).
-    DELETE /projects/
+    DELETE /projects/:projectId/tasks/:taskId
     /tasks/
     : Delete a task by ID (Authenticated).
 

@@ -4,7 +4,7 @@ import Task from "../models/Task";
 
 export const getProjects = async (req: Request, res: Response) => {
   const page = parseInt(req.query.page as string) || 1; // default to page 1
-  const limit = parseInt(req.query.limit as string) || 10; // default to 10 items per page
+  const limit = parseInt(req.query.limit as string) || 10; // default to 10 projects per page
   const skip = (page - 1) * limit;
 
   try {
